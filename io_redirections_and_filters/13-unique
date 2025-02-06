@@ -1,0 +1,6 @@
+#!/bin/bash
+words=()
+while read -r word; do
+  words+=("$word")
+done
+echo "${words[@]}" | tr ' ' '\n' | sort | uniq -u
