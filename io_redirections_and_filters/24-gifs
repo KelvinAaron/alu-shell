@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -iname "*.gif" -exec sh -c 'echo "${1%.*}"' sh {} | sort -f
+find . -type f -iname "*.gif" -exec ls -lS {} + | cut -d' ' -f9 | tr -d './' | sort -f | rev | cut -c4- | rev
