@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c1 <&0 | tr -d '\n' | \n  
+head -n -1 "$1" | tr -d '\n' | cut -c1-
