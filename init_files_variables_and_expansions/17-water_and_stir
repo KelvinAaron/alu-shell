@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=$WATER" | bc | $((WATER + STIR)) | echo "obase=$BESTCHOL" | bc
+echo $(echo $WATER | tr 'ewwatratewa' '01234567890' | tr -d '\n')$(echo $STIR | tr 'ti.itirtrtr' 'abcdefghijklmnopqrstuvwxyz' | tr -d '\n') 
