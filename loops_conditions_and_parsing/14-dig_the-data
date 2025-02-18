@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# This script groups visitors by IP and HTTP status code, and displays the occurrence count, sorted from greatest to lowest.
-awk '{print $1, $9}' /var/log/apache2/access.log | sort | uniq -c | sort -nr | awk '{print $1, $2, $3}'
+# This script groups the Apache log data by IP and HTTP status code, counts the occurrences, and sorts them.
+
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr | awk '{printf "%6d %s %s\n", $1, $2, $3}'
