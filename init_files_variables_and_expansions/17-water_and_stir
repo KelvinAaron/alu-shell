@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( $(echo $WATER | tr 'ewwatratewa' '0123456789' | tr -d '\n') + $(echo $STIR | tr 'ti.itirtrtr' '0123456789' | tr -d '\n') ))
+echo $(( $(echo $WATER | tr 'ewwatratewa' '0123456789' | tr -d '\n') + $(echo $STIR | tr 'ti.itirtrtr' '0123456789' | tr -d '\n') )) | tr '0123456789' 'abcdefghijklmnopqrstuvwxyz'
