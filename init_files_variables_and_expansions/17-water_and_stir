@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "ibase=$WATER" | bc | $((WATER + STIR)) | echo "obase=$BESTCHOL" | bc
