@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script reads through the /etc/passwd file and prints a story for each user.
 
 IFS=":" # Set the field separator for reading the fields in /etc/passwd
