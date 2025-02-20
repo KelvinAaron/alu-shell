@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# Display running processes and filter lines containing 'bash'
-# shellcheck disable=SC2009
-
-ps -e -o pid,comm --sort=pid | grep bash
+# Use ps to list all processes with hierarchy & user-oriented format by chriss
+ps aux --forest|grep "bash"

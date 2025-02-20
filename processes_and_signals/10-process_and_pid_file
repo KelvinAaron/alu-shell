@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
-# Create a PID file, print messages indefinitely, and handle different signals
+# Create a file containing the script's PID
+sudo bash -c "echo $$ > /var/run/myscript.pid"
 
-echo $$ > /var/run/myscript.pid
-trap 'echo "I hate the kill command"' SIGTERM
+# Define trap handlers for signals
 trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
-while true; do echo "To infinity and beyond"; sleep 2; done
+trap 'echo "I hate the kill command"; sudo rm -f /var/run/myscript.pid; exit' SIGTERM
+trap 'sudo rm -f /var/run/myscript.pid; exit' SIGQUIT
+
+# Infinite loop
+while :
+do
+	    echo "To infinity and beyond"
+	        sleep 2
+	done

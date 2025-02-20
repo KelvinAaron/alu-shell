@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# Display the PID and command name of currently running processes in a user-oriented format
-
-ps -e -o pid,comm --sort=pid
+# Use ps to list all processes with hierarchy & user-oriented format by chriss
+ps auxf
