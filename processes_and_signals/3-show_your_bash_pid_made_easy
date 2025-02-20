@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# Display the PID and process name of processes containing 'bash'
+# Display the PID and command name of processes containing 'bash'
 
-cat /proc/*/cmdline 2>/dev/null | grep -l bash | cut -d'/' -f3
+for pid in /proc/[0-9]*; do
+	  cmd=$(cat "$pid/cmdline" 2>/dev/null)
+	    if [[ $cmd == *bash* ]]; then
+		        echo "$(basename $pid) $cmd"
+			  fi
+		  done
