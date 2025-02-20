@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# This script groups the Apache log data by IP and HTTP status code, counts the occurrences, and sorts them.
-
-awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr | awk '{printf "%6d %s %s\n", $1, $2, $3}'
+#apache codes
+awk '{print $1,$9}' apache-access.log | sort -V | uniq -c | sort -n | perl -e 'print reverse <>'
